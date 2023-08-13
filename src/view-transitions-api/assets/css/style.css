@@ -1,0 +1,136 @@
+/* 共通 */
+:root {
+  background-color: #ccc;
+}
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-inline: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.container {
+  margin-top: 2rem;
+}
+.page-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.link {
+  display: block;
+}
+.footer {
+  margin-top: 4rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+*[hidden] {
+  display: none !important;
+}
+
+/* 書籍一覧 */
+:where(*[data-transition-wrapper='book-index']) {
+  .book-index-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .book {
+    display: block;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease-out;
+  }
+  .book:hover {
+    box-shadow: 0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.3);
+  }
+  .book-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .book-author {
+    font-size: 1rem;
+  }
+  .thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 64/36;
+  }
+  .book-link {
+    display: grid;
+    grid-template-columns: [outer-start] 1rem [inner-start] 1fr [inner-end] 1rem [outer-start];
+    row-gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  .book-link > * {
+    grid-column: inner;
+  }
+  .thumbnail {
+    grid-column: outer;
+  }
+}
+
+/* 書籍詳細 */
+:where(*[data-transition-wrapper='book-detail']) {
+  .book {
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: [outer-start] 1rem [inner-start] 1fr [inner-end] 1rem [outer-start];
+    padding-block: 1rem;
+    padding-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    overflow: hidden;
+  }
+  .book > * {
+    grid-column: inner;
+  }
+  .book-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .book-author {
+    font-size: 1rem;
+  }
+  .thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 64/36;
+  }
+  .back-link {
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: underline;
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .thumbnail {
+    grid-column: outer;
+  }
+}
+
+/* View Transitions API */
+*[data-view-transition-name='thumbnail'] {
+  view-transition-name: thumbnail;
+}
+*[data-view-transition-name='title'] {
+  view-transition-name: title;
+}
+*[data-view-transition-name] {
+  contain: paint;
+}
+/* アニメーションの時間調整 */
+/* ::view-transition-group(*),
+::view-transition-old(*),
+::view-transition-new(*) {
+  animation-duration: 10s;
+} */
