@@ -32,7 +32,7 @@ navigation.addEventListener('navigate', e => {
     const toHTML = parsedHTML.querySelector('*[data-transition-wrapper]');
     const fromHTML = document.querySelector('*[data-transition-wrapper]');
     await swap([fromHTML, toHTML]);
-    document.title = toHTML.title;
+    document.title = parsedHTML.title;
   };
   e.intercept({ handler: loadNextPage });
 });
