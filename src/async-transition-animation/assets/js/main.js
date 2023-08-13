@@ -8,7 +8,7 @@ const parseHTML = html => {
 const getHTML = async url => {
   return fetch(url).then(res => res.text());
 };
-const swap = (from, to) => {
+const swap = ([from, to]) => {
   return document.startViewTransition(() => {
     from.replaceWith(to);
   }).updateCallbackDone;
@@ -31,7 +31,7 @@ navigation.addEventListener('navigate', e => {
     const parsedHTML = parseHTML(htmlString);
     const toHTML = parsedHTML.querySelector('*[data-transition-wrapper]');
     const fromHTML = document.querySelector('*[data-transition-wrapper]');
-    await swap(fromHTML, toHTML);
+    await swap([fromHTML, toHTML]);
     document.title = toHTML.title;
   };
   e.intercept({ handler: loadNextPage });
