@@ -1,0 +1,50 @@
+/* 共通 */
+:root {
+  background-color: #ccc;
+  line-height: 1.5;
+}
+a {
+  color: LinkText;
+  text-decoration: underline;
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.wrapper {
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-inline: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.page-title {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.page-description {
+  margin-top: 2rem;
+}
+.section {
+  margin-top: 4rem;
+}
+.section-title {
+  font-size: 1.25rem;
+}
+.link-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+.link-item {
+  list-style: square;
+}
+.link-anchor {
+  font-size: 1rem;
+}
