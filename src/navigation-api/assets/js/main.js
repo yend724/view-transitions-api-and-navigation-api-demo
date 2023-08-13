@@ -30,7 +30,7 @@ navigation.addEventListener('navigate', e => {
     const toHTML = parsedHTML.querySelector('*[data-transition-wrapper]');
     const fromHTML = document.querySelector('*[data-transition-wrapper]');
     swap(fromHTML, toHTML);
-    document.title = to.title;
+    document.title = toHTML.title;
   };
   e.intercept({ handler: loadNextPage });
 });
