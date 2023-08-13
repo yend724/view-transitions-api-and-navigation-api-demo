@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>書籍一覧 | Navigation APIのデモ</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main class="main" data-transition-wrapper="book-index">
+        <h1 class="page-title">書籍一覧</h1>
+        <div class="container">
+          <div class="book-index-list">
+            <article class="book">
+              <a
+                class="book-link link"
+                href="/navigation-api/detail/i-am-a-cat/"
+              >
+                <img
+                  class="thumbnail"
+                  data-view-transition-name="thumbnail"
+                  src="https://picsum.photos/id/666/1280/720"
+                  width="640"
+                  height="360"
+                  alt=""
+                  decoding="async"
+                />
+                <h2 class="book-title" data-view-transition-name="title">
+                  吾輩は猫である
+                </h2>
+                <div class="book-author">夏目 漱石</div>
+              </a>
+            </article>
+            <article class="book">
+              <a class="book-link link" href="/navigation-api/detail/rashomon/">
+                <img
+                  class="thumbnail"
+                  data-view-transition-name="thumbnail"
+                  src="https://picsum.photos/id/777/1280/720"
+                  width="640"
+                  height="360"
+                  alt=""
+                  decoding="async"
+                />
+                <h2 class="book-title" data-view-transition-name="title">
+                  羅生門
+                </h2>
+                <div class="book-author">芥川 竜之介</div>
+              </a>
+            </article>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">Navigation APIのデモです</footer>
+    </div>
+    <script type="module" src="/navigation-api/assets/js/main.js"></script>
+  </body>
+</html>

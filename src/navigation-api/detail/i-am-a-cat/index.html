@@ -3,38 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>View Transitions APIのデモ</title>
+    <title>書籍詳細 | Navigation APIのデモ</title>
   </head>
   <body>
     <div class="wrapper">
-      <main class="main" data-transition-wrapper="book-index">
-        <h1 class="page-title">書籍一覧</h1>
-        <div class="container">
-          <div class="book-index-list">
-            <article class="book">
-              <a
-                class="book-link link"
-                href="/view-transitions-api/?page=book-detail"
-              >
-                <img
-                  class="thumbnail"
-                  data-view-transition-name="thumbnail"
-                  src="https://picsum.photos/id/666/640/360"
-                  width="640"
-                  height="360"
-                  alt=""
-                  decoding="async"
-                />
-                <h2 class="book-title" data-view-transition-name="title">
-                  吾輩は猫である
-                </h2>
-                <div class="book-author">夏目 漱石</div>
-              </a>
-            </article>
-          </div>
-        </div>
-      </main>
-      <main class="main" data-transition-wrapper="book-detail" hidden>
+      <main class="main" data-transition-wrapper="book-detail">
         <h1 class="page-title">書籍詳細</h1>
         <div class="container">
           <article class="book">
@@ -44,7 +17,7 @@
             <img
               class="thumbnail"
               data-view-transition-name="thumbnail"
-              src="https://picsum.photos/id/666/640/360"
+              src="https://picsum.photos/id/666/1280/720"
               width="640"
               height="360"
               alt=""
@@ -56,14 +29,11 @@
             </p>
             <div class="book-author">夏目 漱石</div>
           </article>
-          <a class="link back-link" href="./">一覧へ戻る</a>
+          <a class="link back-link" href="/navigation-api/">一覧へ戻る</a>
         </div>
       </main>
-      <footer class="footer">View Transitions APIのデモです</footer>
+      <footer class="footer">Navigation APIのデモです</footer>
     </div>
-    <script
-      type="module"
-      src="/view-transitions-api/assets/js/main.js"
-    ></script>
+    <script type="module" src="/navigation-api/assets/js/main.js"></script>
   </body>
 </html>
