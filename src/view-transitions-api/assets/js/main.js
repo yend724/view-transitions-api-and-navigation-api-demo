@@ -1,7 +1,7 @@
 import 'destyle.css';
 import '../css/style.css';
 
-const swap = async (to, from) => {
+const swap = async (from, to) => {
   return document.startViewTransition(() => {
     from.hidden = true;
     to.hidden = false;
@@ -37,7 +37,7 @@ documentBody.addEventListener('click', async e => {
     const params = url.searchParams;
     const nextPage = params.get('page') ?? 'book-index';
     const nextSwapList =
-      nextPage === 'book-index' ? pageList : [...pageList].reverse();
+      nextPage === 'book-detail' ? pageList : [...pageList].reverse();
     await swap(...nextSwapList);
   }
 });
